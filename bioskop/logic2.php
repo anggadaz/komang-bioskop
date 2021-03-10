@@ -1,6 +1,6 @@
 <?php
 //$string = "This is some text with some more text and even more text.";
-$string = "kmmaiu lolo oou";
+$string = "ai";
 $jmhVokal=preg_match_all('/[aeiou]/i',$string,$matches);
 $jmhKon=preg_match_all('/[bcdfghjklmnpqrstvwxyz]/i',$string,$matches);
 $jmhKata=str_word_count($string);
@@ -10,6 +10,7 @@ $delVol = str_replace($vowels, "", $string);
 $delKon = str_replace($kons, "", $string);
 $pjg= strlen($string);
 $arr = explode(' ',trim($string));
+$inc=5;
 
 $tmp="";
 echo "apel ".$jmhKon."<br>";
@@ -85,6 +86,10 @@ if($jmhKata==1){//1 kata
 }
 
 echo "<br>";
+$inc=$inc+1;
+$kodeBarang =sprintf("%03s", $inc);
+$tmp=$tmp.$kodeBarang;
+echo "hasil akhir ".$tmp."<br>";
 echo $string;
 
 ?>
